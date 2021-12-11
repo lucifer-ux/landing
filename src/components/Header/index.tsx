@@ -3,7 +3,7 @@ import { Row, Col, Drawer } from "antd";
 import { withTranslation } from "react-i18next";
 import Container from "../../common/Container";
 import { SvgIcon } from "../../common/SvgIcon";
-import { Button } from "../../common/Button";
+// import { Button } from "../../common/Button";
 import {
   HeaderSection,
   LogoContainer,
@@ -16,6 +16,27 @@ import {
   Span,
 } from "./styles";
 
+interface SocialLinkProps {
+  href: string;
+  // src: string;
+}
+
+const SocialLink = ({ href }: SocialLinkProps) => {
+  return (
+    <a
+    style={{width: "180px"}}
+      href={href}
+      target="_blank"
+      rel="noopener noreferrer"
+      // key={src}
+      // aria-label={src}
+    >
+      Sign-up
+      {/* <SvgIcon src={src} width="25px" height="25px" /> */}
+    </a>
+  );
+};
+
 const Header = ({ t }: any) => {
   const [visible, setVisibility] = useState(false);
 
@@ -26,6 +47,7 @@ const Header = ({ t }: any) => {
   const onClose = () => {
     setVisibility(!visible);
   };
+  
 
   const MenuItem = () => {
     const scrollTo = (id: string) => {
@@ -40,20 +62,22 @@ const Header = ({ t }: any) => {
         <CustomNavLinkSmall onClick={() => scrollTo("about")}>
           <Span>{t("About")}</Span>
         </CustomNavLinkSmall>
-        <CustomNavLinkSmall onClick={() => scrollTo("mission")}>
-          <Span>{t("Mission")}</Span>
-        </CustomNavLinkSmall>
-        <CustomNavLinkSmall onClick={() => scrollTo("product")}>
-          <Span>{t("Product")}</Span>
-        </CustomNavLinkSmall>
-        <CustomNavLinkSmall
+        
+        
+        <SocialLink
+              href="formForSignUp.html"
+                // src="twitter.svg"
+              />
+        
+        
+        {/* <a
           style={{ width: "180px" }}
-          onClick={() => scrollTo("contact")}
+          href="www.google.com" target="0"
         >
           <Span>
-            <Button>{t("Contact")}</Button>
+            <button >{t("Sign Up")}</button>
           </Span>
-        </CustomNavLinkSmall>
+        </a> */}
       </>
     );
   };
@@ -63,7 +87,7 @@ const Header = ({ t }: any) => {
       <Container>
         <Row justify="space-between">
           <LogoContainer to="/" aria-label="homepage">
-            <SvgIcon src="logo.svg" width="101px" height="64px" />
+            <SvgIcon src="logo.svg" width="170px" height="140px" />
           </LogoContainer>
           <NotHidden>
             <MenuItem />
@@ -91,3 +115,4 @@ const Header = ({ t }: any) => {
 };
 
 export default withTranslation()(Header);
+//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

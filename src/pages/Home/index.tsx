@@ -5,8 +5,8 @@ import AboutContent from "../../content/AboutContent.json";
 import MissionContent from "../../content/MissionContent.json";
 import ProductContent from "../../content/ProductContent.json";
 import ContactContent from "../../content/ContactContent.json";
-
-const Contact = lazy(() => import("../../components/ContactForm"));
+// import ContactForm from "../../content/ContactContent.json";
+// const Contact = lazy(() => import("../../components/ContactForm"));
 const MiddleBlock = lazy(() => import("../../components/MiddleBlock"));
 const Container = lazy(() => import("../../common/Container"));
 const ScrollToTop = lazy(() => import("../../common/ScrollToTop"));
@@ -51,11 +51,18 @@ const Home = () => {
         icon="waving.svg"
         id="product"
       />
-      <Contact
+      <ContentBlock
+        type="right"
         title={ContactContent.title}
         content={ContactContent.text}
-        id="contact"
+        icon="form.svg"
+        id="mission"
       />
+      {/* <Contact
+        title={ContactForm.title}
+        content={ContactForm.text}
+        id="contact"
+      /> */}
     </Container>
   );
 };

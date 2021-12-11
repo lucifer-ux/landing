@@ -1,13 +1,13 @@
 {
-  "title": "Landing page template for developers & startups",
-  "text": "Beautifully designed templates using React.js, ant design and styled-components! Save weeks of time and build your landing page in minutes.",
+  "title": "Know what to invest and how much to invest in crypto",
+  "text": "Beautifully designed UI Save weeks of time and build your bubl of profit in minutes",
   "button": [
     {
-      "title": "Explore"
+      "title": ""
     },
     {
-      "title": "Learn more",
-      "color": "#fff"
+      "title": "",
+      "color": ""
     }
   ]
 }
